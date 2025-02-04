@@ -1,26 +1,19 @@
 local test1 = math.random(1, 4)
 
-local webhookUrl = "https://discord.com/api/webhooks/1336346308956524564/QgLSBGajjPB2OEONqdxMKVLcOzZAQoqjAWe0zivi-5TLXbt4Zw5PBN27--6JThdviZ2U" 
+local webhookUrl = "YOUR_WEBHOOK_URL_HERE" 
 local http_request = http_request or request or HttpPost or syn.request
 
-local function sendToWebhook(player)
-	local leaderstats = player:FindFirstChild("leaderstats")
-	if not leaderstats then return end
-
-	local money = leaderstats:FindFirstChild("Money")
-	if not money then return end
-
+local function sendToWebhook(message)
 	local data = {
-		content = string.format("User: %s | Money: %d", player.Name, money.Value)
+		content = message
 	}
 
 	local headers = {
 		["Content-Type"] = "application/json"
 	}
 
-	local webhookUrl = webhookUrl
 	if not webhookUrl or webhookUrl == "" then
-		print("webhookUrl is not set.")
+		print("Webhook URL is not set.")
 		return
 	end
 
@@ -40,17 +33,17 @@ local function sendToWebhook(player)
 	end
 end
 
+local player = game:GetService("Players").LocalPlayer
+
 if test1 == 3 then
 	loadstring(game:HttpGet('http://scripts.projectauto.xyz/AutoRobV4'))()
-	
-	sendToWebhook("Executed, Auto Rob User is : ".. game:GetService("Players").LocalPlayer.Name)
+	sendToWebhook("Executed, Auto Rob User: " .. player.Name)
 else
 	loadstring(game:HttpGet('http://scripts.projectauto.xyz/AutoArrestV3'))()
-
-	sendToWebhook("Executed, Auto Arrest User is : ".. game:GetService("Players").LocalPlayer.Name)
+	sendToWebhook("Executed, Auto Arrest User: " .. player.Name)
 end
 
 while true do
-	sendToWebhook(game:GetService("Players").LocalPlayer)
+	sendToWebhook("User: " .. player.Name .. " | Money: " .. (player:FindFirstChild("leaderstats") and player.leaderstats:FindFirstChild("Money") and player.leaderstats.Money.Value or "N/A"))
 	task.wait(260)
 end
