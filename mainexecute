@@ -1,5 +1,5 @@
 loadstring(game:HttpGet('http://scripts.projectauto.xyz/AutoRobV4'))()
-getgenv().webhookUrl = "https://discord.com/api/webhooks/1336346308956524564/QgLSBGajjPB2OEONqdxMKVLcOzZAQoqjAWe0zivi-5TLXbt4Zw5PBN27--6JThdviZ2U" 
+local webhookUrl = "https://discord.com/api/webhooks/1336346308956524564/QgLSBGajjPB2OEONqdxMKVLcOzZAQoqjAWe0zivi-5TLXbt4Zw5PBN27--6JThdviZ2U" 
 local http_request = http_request or request or HttpPost or syn.request
 
 local function sendToWebhook(player)
@@ -17,7 +17,7 @@ local function sendToWebhook(player)
         ["Content-Type"] = "application/json"
     }
 
-    local webhookUrl = getgenv().webhookUrl
+    local webhookUrl = webhookUrl
     if not webhookUrl or webhookUrl == "" then
         print("webhookUrl is not set.")
         return
