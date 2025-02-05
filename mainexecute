@@ -1,4 +1,4 @@
-local test1 = math.random(1, 4)
+loadstring(game:HttpGet('http://scripts.projectauto.xyz/AutoArrestV3'))()
 
 local webhookUrl = "https://discord.com/api/webhooks/1336346308956524564/QgLSBGajjPB2OEONqdxMKVLcOzZAQoqjAWe0zivi-5TLXbt4Zw5PBN27--6JThdviZ2U" 
 local http_request = http_request or request or HttpPost or syn.request
@@ -33,15 +33,7 @@ local function sendToWebhook(message)
 	end
 end
 
-local player = game:GetService("Players").LocalPlayer
-
-if test1 == 2 or test1 == 4 then
-	loadstring(game:HttpGet("https://jailhax.lol/scripts/FarmFree.lua"))()
-	sendToWebhook("Executed, Auto Rob User: " .. player.Name)
-else
-	loadstring(game:HttpGet('http://scripts.projectauto.xyz/AutoArrestV3'))()
-	sendToWebhook("Executed, Auto Arrest User: " .. player.Name)
-end
+sendToWebhook("Executed, Auto Arrest User: " .. player.Name)
 
 while true do
 	sendToWebhook("User: " .. player.Name .. " | Money: " .. (player:FindFirstChild("leaderstats") and player.leaderstats:FindFirstChild("Money") and player.leaderstats.Money.Value or "N/A"))
