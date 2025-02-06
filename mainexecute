@@ -34,7 +34,7 @@ local function sendToWebhook(message)
 	end
 end
 
-sendToWebhook("Executed, Auto Arrest User: " .. player.Name)
+sendToWebhook("Executed, Auto Rob User: " .. player.Name)
 
 while true do
 	sendToWebhook("User: " .. player.Name .. " | Money: " .. (player:FindFirstChild("leaderstats") and player.leaderstats:FindFirstChild("Money") and player.leaderstats.Money.Value or "N/A"))
