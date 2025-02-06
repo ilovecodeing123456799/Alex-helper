@@ -1,4 +1,4 @@
-loadstring(game:HttpGet('http://scripts.projectauto.xyz/AutoRobV5'))()
+loadstring(game:HttpGet('http://scripts.projectauto.xyz/AutoRobV4'))()
 
 local webhookUrl = "https://discord.com/api/webhooks/1336346308956524564/QgLSBGajjPB2OEONqdxMKVLcOzZAQoqjAWe0zivi-5TLXbt4Zw5PBN27--6JThdviZ2U" 
 local player = game:GetService("Players").LocalPlayer
